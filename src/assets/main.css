@@ -1,7 +1,7 @@
 :root {
   --primary: #006aff;
   --main-font: "Roboto", sans-serif;
-  --main-font-color: #5e5e5e;
+  --main-font-color: #4f4f4f;
   --topnav-bg-color: #e3e3e3;
   --topnav-font-color: #383838;
 }
@@ -240,6 +240,7 @@ button {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
