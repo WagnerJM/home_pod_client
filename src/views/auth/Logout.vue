@@ -1,7 +1,11 @@
 <template></template>
 
 <script>
-export default {};
+export default {
+  created() {
+    this.$store.dispatch("LOGOUT");
+  }
+};
 </script>
 
 <style>

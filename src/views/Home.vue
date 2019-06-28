@@ -1,6 +1,23 @@
 <template>
   <div class="container">
     <h1>Home Screen</h1>
+    <div class="flex-container row wrap">
+      <div class="card clickable">
+        <div class="card-container">
+          <h2>Recorder</h2>
+        </div>
+      </div>
+      <div class="card clickable">
+        <div class="card-container">
+          <h2>Finanzen</h2>
+        </div>
+      </div>
+      <div class="card clickable">
+        <div class="card-container">
+          <h2>System Settings</h2>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
