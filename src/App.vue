@@ -15,6 +15,7 @@
     </div>
 
     <router-view></router-view>
+    <div class="push"></div>
     <div class="footer">
       <div>&copy {{ new Date().getFullYear() }} J-M. Wagner</div>
     </div>

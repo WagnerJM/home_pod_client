@@ -6,7 +6,7 @@
   --topnav-font-color: #383838;
 }
 .footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0 px;
   padding: 10px;
@@ -50,6 +50,7 @@
 
 body {
   margin: 0;
+  height: 100%;
 }
 
 .clickable {
@@ -99,6 +100,8 @@ tr:hover {
 .container {
   width: 65%;
   margin: auto;
+  min-height: 100%;
+  margin-bottom: -50px;
 }
 
 .flex-container {
@@ -119,6 +122,8 @@ tr:hover {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: var(--main-font-color);
+  min-height: 100%;
+  margin-bottom: -50px;
 }
 
 .topnav {
@@ -193,7 +198,6 @@ input[type="submit"]:hover {
 
 ul {
   list-style-type: none;
-  text-align: center;
 }
 ul li {
   position: relative;
@@ -465,4 +469,16 @@ nav label:active {
 .center {
   margin: auto;
   width: 50%;
+}
+
+.list-group {
+  text-align: center;
+}
+.list-group .list-group-item {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  margin-left: 0px;
+  width: 250px;
+  border: 1px solid #ddd;
 }
