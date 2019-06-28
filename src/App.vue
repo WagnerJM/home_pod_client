@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png">
-    <HelloWorld msg="Hello Vue in CodeSandbox!" />
+    <div class="topnav">
+      <a class="active">Home Pod</a>
+
+      <router-link class="right active" to="/login" v-if="!this.$store.state.isAuthenticated">Login</router-link>
+      <router-link class="right" to="/signup" v-if="!this.$store.state.isAuthenticated">Sign Up</router-link>
+
+      <router-link
+        class="active right"
+        to="/profile"
+        v-if="this.$store.state.isAuthenticated"
+      >Profile</router-link>
+      <router-link class="right" to="/recorder" v-if="this.$store.state.isAuthenticated">Recorder</router-link>
+    </div>
+
+    <router-view></router-view>
+    <div class="footer">
+      <div>&copy {{ new Date().getFullYear() }} J-M. Wagner</div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
-export default {
-  name: "App",
-  components: {
-    HelloWorld
-  }
-};
+export default {};
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
