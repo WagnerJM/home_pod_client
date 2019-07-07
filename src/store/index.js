@@ -8,7 +8,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   modules: {},
   state: {
-    isAuthenticated: true,
+    isAuthenticated: false,
     loading: false,
     token: "",
     message: "",
@@ -32,7 +32,7 @@ const store = new Vuex.Store({
   },
   actions: {
     LOGIN({ commit, dispatch }, payload) {
-      commit("loading");
+      //commit("loading");
       http
         .post("/login", {
           username: payload.username,
@@ -42,11 +42,12 @@ const store = new Vuex.Store({
           commit("setToken", res.data);
           commit("login_success");
           router.push("/");
-          commit("loading");
-          dispatch("GET_INITIAL_DATA");
+          //commit("loading");
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
+          
+
         });
     },
     LOGOUT({ commit }) {

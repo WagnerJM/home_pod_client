@@ -1,12 +1,15 @@
 <template>
-  <div class="container">
-    <form>
+  <div class="loader" v-if="this.$store.state.loading">
+
+  </div>
+  <div class="container" v-else>
+    <form @submit.prevent>
       <h2>Login</h2>
       <label>Username</label>
-      <input type="text" name="Username" placeholder="Username...">
+      <input type="text" name="Username" placeholder="Username..." v-model="username">
       <label>Password</label>
-      <input type="password" name="Password" placeholder="Password...">
-      <button>Login</button>
+      <input type="password" name="Password" placeholder="Password..." v-model="password">
+      <button @click="login()">Login</button>
     </form>
   </div>
 </template>
@@ -17,7 +20,15 @@ export default {
     username: "",
     password: ""
   }),
-  methods: {}
+  methods: {
+    login() {
+      const formData = {
+        username: this.username, 
+        password: this.password
+      }
+      this.$store.dispatch('LOGIN', formData)
+    }
+  }
 };
 </script>
 

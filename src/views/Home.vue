@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Home Screen</h1>
     <div class="flex-container row wrap">
-      <div class="card clickable">
+      <div class="card clickable" @click="navigate('/recorder')">
         <div class="card-container">
           <h2>Recorder</h2>
         </div>
@@ -22,7 +22,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    navigate(route) {
+      this.$router.push(route);
+    }
+  },
+  data() {
+    return {
+      
+    }
+  },
+};
 </script>
 
 <style>

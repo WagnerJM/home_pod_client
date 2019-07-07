@@ -6,7 +6,7 @@
   --topnav-font-color: #383838;
 }
 .footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   left: 0 px;
   padding: 10px;
@@ -253,7 +253,7 @@ button {
   background-color: var(--primary);
   border: none;
   width: 10;
-  color: #5e5e5e;
+  color: var(--topnav-font-color);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
