@@ -7,6 +7,7 @@ import Logout from "../views/auth/Logout.vue";
 import SignUp from "../views/auth/SignUp.vue";
 
 import Recorder from "../views/recorder/Recorder.vue";
+import System from "../views/admin/System.vue";
 
 import store from "../store";
 Vue.use(Router);
@@ -40,6 +41,18 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home,
+      beforeEnter(to, from, next) {
+        if (store.state.isAuthenticated) {
+          next();
+        } else {
+          next("/login");
+        }
+      }
+    },
+    {
+      path: "/admin/system",
+      name: "system",
+      component: System,
       beforeEnter(to, from, next) {
         if (store.state.isAuthenticated) {
           next();

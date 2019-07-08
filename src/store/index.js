@@ -12,7 +12,8 @@ const store = new Vuex.Store({
     loading: false,
     token: "",
     message: "",
-    user: {}
+    user: {},
+    system_settings: {}
   },
   mutations: {
     loading: state => {
@@ -28,6 +29,12 @@ const store = new Vuex.Store({
     setToken: (state, payload) => {
       state.token = payload.token;
       state.message = payload.message;
+    },
+    setSettings: (state, payload) => {
+      state.system_settings = payload.system_settings;
+    },
+    setUser: (state, payload) => {
+      state.user = payload.user;
     }
   },
   actions: {
@@ -41,14 +48,11 @@ const store = new Vuex.Store({
         .then(res => {
           commit("setToken", res.data);
           commit("login_success");
+          dispatch("GET_USER_DATA");
           router.push("/");
           //commit("loading");
         })
-        .catch((error) => {
-          console.log(error);
-          
-
-        });
+        
     },
     LOGOUT({ commit }) {
       //logout
@@ -61,14 +65,31 @@ const store = new Vuex.Store({
           commit("logout");
           //TODO: remove all data from store
         })
-        .catch(error => {
-          console.log(error);
-        });
+        
+    },
+    GET_SYSTEM_SETTINGS({commit}) {
+      commit("loading");
+      http
+        .get("/system/settings")
+        .then( res => {
+          commit("setSettings", res.data);
+          commit("loading");
+        })
+    },
+    GET_USER_DATA({commit}) {
+      http
+        .get("/user")
+        .then( res => {
+          commit("setUser", res.data);
+        })
     }
   },
   getters: {
     token({ token }) {
       return token;
+    },
+    system_settings({system_settings}) {
+      return system_settings;
     }
   }
 });

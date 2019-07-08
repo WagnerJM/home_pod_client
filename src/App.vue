@@ -12,12 +12,13 @@
         v-if="this.$store.state.isAuthenticated"
       >Profile</router-link>
       <router-link class="right" to="/recorder" v-if="this.$store.state.isAuthenticated">Recorder</router-link>
+      <router-link class="right" to="/admin/system" v-if="this.$store.state.user.is_admin">Settings</router-link>
     </div>
 
     <router-view></router-view>
     <div class="push"></div>
     <div class="footer">
-      <div>&copy {{ new Date().getFullYear() }} J-M. Wagner</div>
+      <div>&copy; {{ new Date().getFullYear() }} J-M. Wagner</div>
     </div>
   </div>
 </template>
