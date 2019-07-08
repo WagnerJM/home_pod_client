@@ -13,7 +13,11 @@ const store = new Vuex.Store({
     token: "",
     message: "",
     user: {},
-    system_settings: {}
+    system_settings: {},
+    recorder: {
+      token: "",
+      track_list: []
+    }
   },
   mutations: {
     loading: state => {
