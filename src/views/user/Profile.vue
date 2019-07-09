@@ -3,7 +3,7 @@
     <FlashMessage></FlashMessage>
     <h1>
       User Profile
-      <i class="material-icons clickable" @click="editItem()">edit</i>
+      <i class="material-icons clickable" @click="editItem(userData)">edit</i>
     </h1>
     <modal name="profile" height="auto" :adaptive="true">
       <div class="flex-container">
@@ -15,7 +15,7 @@
           <input type="email" name="email">
           <label>Ort:</label>
           <input type="text" name="ort">
-          <button>Speichern</button>
+          <button @click="saveUser">Speichern</button>
         </div>
       </div>
     </modal>
