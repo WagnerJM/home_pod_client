@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import http from "../../axios-instance";
+
 export default {
   computed: {
     userData() {
@@ -53,9 +55,27 @@ export default {
     };
   },
   methods: {
-    editItem(settings) {
+    editItem(userData) {
       this.$modal.show("profile");
-      this.editedItem = Object.assign({}, settings);
+      this.editedItem = Object.assign({}, userData);
+    },
+    saveUser() {
+      const formData = {
+        username: this.editedItem.username,
+        email: this.editedItem.email,
+        ort: this.editedItem.ort
+      };
+      http
+        .put("/user", formData)
+        .then(res => {
+          this.$store.commit("setUser", res.data);
+          this.flashMessage.success({
+            message: "User Profil wurde aktualisiert."
+          });
+        })
+        .catch(error => {
+          this.flashMessage.error({ title: "ERROR", message: error });
+        });
     }
   }
 };
