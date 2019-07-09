@@ -1,10 +1,15 @@
 <template>
   <div class="container">
-    <h1>Home Screen</h1>
+    <h1>Dashboard</h1>
     <div class="flex-container row wrap">
       <div class="card clickable" @click="navigate('/recorder')">
         <div class="card-container">
           <h2>Recorder</h2>
+        </div>
+      </div>
+      <div class="card clickable" @click="navigate('/wetter')">
+        <div class="card-container">
+          <h2>Wetter</h2>
         </div>
       </div>
       <div class="card clickable">
