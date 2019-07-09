@@ -12,7 +12,11 @@
           <h2>Finanzen</h2>
         </div>
       </div>
-      <div class="card clickable">
+      <div
+        class="card clickable"
+        v-if="this.$store.state.user.is_admin"
+        @click="navigate('/admin/system')"
+      >
         <div class="card-container">
           <h2>System Settings</h2>
         </div>
@@ -29,10 +33,8 @@ export default {
     }
   },
   data() {
-    return {
-      
-    }
-  },
+    return {};
+  }
 };
 </script>
 
