@@ -8,7 +8,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   modules: {},
   state: {
-    isAuthenticated: true,
+    isAuthenticated: false,
     loading: false,
     token: "",
     message: "",
