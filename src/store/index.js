@@ -32,7 +32,6 @@ const store = new Vuex.Store({
     },
     setToken: (state, payload) => {
       state.token = payload.token;
-      state.message = payload.message;
     },
     setSettings: (state, payload) => {
       state.system_settings = payload.system_settings;
