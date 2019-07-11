@@ -101,7 +101,7 @@ export default {
         .then(res => {
           this.flashMessage.success({ title: "Token Speichern", message: res.data.message });
           console.log(res.data)
-          this.spotify_token = "";
+          
         })
         .catch(error => {
           this.flashMessage.error({ title: "ERROR", message: error })
