@@ -99,7 +99,7 @@ export default {
       http
         .post("/saveToken", formData)
         .then(res => {
-          //this.flashMessage.success({ title: "Token Speichern", message: res.data.message });
+          this.flashMessage.success({ title: "Token Speichern", message: res.data.message });
           console.log(res.data)
           
         })
